@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            {% if lugar.imagen %}
+                <img src="{{ lugar.imagen }}" class="card-img-top" alt="{{ lugar.nombre }}" style="max-height: 400px; object-fit: cover;">
+            {% endif %}
+            <div class="card-body">
+                <span class="badge bg-primary mb-2">{{ lugar.categoria.nombre }}</span>
+                <h1 class="card-title fw-bold">{{ lugar.nombre }}</h1>
+                <hr>
+                <p class="card-text"><strong> Ubicación:</strong> {{ lugar.ubicacion }}</p>
+                <p class="card-text"><strong> Año de Construcción:</strong> {{ lugar.anio_construccion }}</p>
+                <h5 class="mt-4 fw-bold">Descripción:</h5>
+                <p class="card-text text-muted">{{ lugar.descripcion }}</p>
+                
+                <a href="{% url 'catalogo' %}" class="btn btn-secondary mt-3">Volver al Catálogo</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
