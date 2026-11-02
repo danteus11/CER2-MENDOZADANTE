@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm text-center">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold text-primary">Fundación Patrimonio Vivo</h1>
+        <p class="col-md-10 fs-4 mx-auto text-muted">
+            Dedicados a identificar, documentar y difundir lugares de interés patrimonial en Chile.
+        </p>
+        <a href="{% url 'catalogo' %}" class="btn btn-primary btn-lg mt-3">Explorar Catálogo</a>
+    </div>
+</div>
+{% endblock %}
