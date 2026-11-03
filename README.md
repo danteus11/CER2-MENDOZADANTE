@@ -1,6 +1,6 @@
 # CER2-MENDOZADANTE - Fundación Patrimonio Vivo
 
-Aplicación web desarrollada con Python y Django Framework para la gestión y visualización de un catálogo digital de lugares de interés patrimonial, cumpliendo con los requerimientos del Certamen 2.
+Aplicación web desarrollada con Python y Django Framework para la gestión y visualización de un catálogo digital de lugares de interés patrimonial.
 
 ## Tecnologías Utilizadas
 - Python 3.11+
@@ -8,6 +8,7 @@ Aplicación web desarrollada con Python y Django Framework para la gestión y vi
 - Bootstrap 5 (recursos estáticos locales)
 - SQLite (Base de datos por defecto)
 
+---
 
 ## Instrucciones de Instalación y Ejecución
 
@@ -24,7 +25,7 @@ Sigue estos pasos en tu terminal para clonar, configurar y ejecutar el proyecto 
    python manage.py makemigrations
    python manage.py migrate
 
-4. Crear un superusuario (Administrador):
+4. Crear un usuario administrador:
    python manage.py createsuperuser
 
 5. Ejecutar el servidor de desarrollo:
@@ -32,7 +33,7 @@ Sigue estos pasos en tu terminal para clonar, configurar y ejecutar el proyecto 
 
 ---
 
-## Usuarios y Permisos para Pruebas
-- Panel de Administración (Gestión Protegida - RF10, RF11, RF12): Accede mediante /admin/ utilizando las credenciales del superusuario creado en el paso 4.
-- Desde el panel de administración se pueden registrar, modificar y eliminar tanto Categorías como Lugares Patrimoniales.
-- Los visitantes anónimos tienen acceso libre a la Página Principal (RF01), el Catálogo Dinámico (RF02), los Filtros por Categoría (RF04, RF05) y la Vista de Detalle Individual (RF03).
+## Panel de Administración y Pruebas
+- Para probar la sección de gestión protegida, ingresa a `/admin/` en el navegador y utiliza las credenciales del usuario administrador creado en el paso 4.
+- Desde allí podrás agregar, modificar y eliminar categorías y lugares patrimoniales.
+- Los visitantes generales pueden navegar libremente por la página principal, el catálogo dinámico, los filtros por categoría y la vista de detalle de cada lugar.
