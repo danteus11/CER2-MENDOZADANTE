@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+<!-- Título principal y descripción de la sección del catálogo -->
 <div class="row mb-4">
     <div class="col-md-12">
         <h2 class="fw-bold">Catálogo de Lugares Patrimoniales</h2>
@@ -16,6 +17,7 @@
                 Categorías
             </div>
             <div class="list-group list-group-flush">
+                <!-- Condicional de Django que añade la clase visual active (resaltado) al botón "Todas" solo si no hay ninguna categoría seleccionada. -->
                 <a href="{% url 'catalogo' %}" class="list-group-item list-group-item-action {% if not categoria_seleccionada %}active{% endif %}">
                     Todas
                 </a>
@@ -34,18 +36,24 @@
         <div class="row">
             {% for lugar in lugares %}
                 <div class="col-md-6 mb-4">
+                    <!-- Crear cartilla -->
                     <div class="card h-100 shadow-sm">
+                        <!-- Condicional que verifica si el lugar tiene una URL de imagen registrada -->
                         {% if lugar.imagen %}
                             <img src="{{ lugar.imagen }}" class="card-img-top" alt="{{ lugar.nombre }}" style="height: 200px; object-fit: cover;">
                         {% endif %}
                         <div class="card-body d-flex flex-column">
+                            <!-- Muestra una etiqueta flotante con el nombre de la categoría a la que pertenece el lugar -->
                             <span class="badge bg-secondary mb-2 align-self-start">{{ lugar.categoria.nombre }}</span>
                             <h5 class="card-title fw-bold">{{ lugar.nombre }}</h5>
+                            <!-- para mostrar solo las primeras 20 palabras en la tarjeta del catálogo. -->
                             <p class="card-text text-muted small">{{ lugar.descripcion|truncatewords:20 }}</p>
+                            <!-- Genera el enlace dinámico hacia la vista de detalle individual utilizando el ID único del lugar -->
                             <a href="{% url 'detalle_lugar' lugar.id %}" class="btn btn-outline-primary mt-auto">Ver Detalle</a>
                         </div>
                     </div>
                 </div>
+            <!-- se ejecuta automáticamente si la lista de lugares está vacía -->    
             {% empty %}
                 <div class="col-12">
                     <div class="alert alert-info">

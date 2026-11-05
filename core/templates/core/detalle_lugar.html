@@ -4,10 +4,12 @@
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card shadow-sm">
+            <!-- Condicional de Django que verifica si el lugar tiene una URL de imagen asociada -->
             {% if lugar.imagen %}
                 <img src="{{ lugar.imagen }}" class="card-img-top" alt="{{ lugar.nombre }}" style="max-height: 400px; object-fit: cover;">
             {% endif %}
             <div class="card-body">
+                <!-- Muestra una insignia (badge) de color primario con el nombre de la categoría -->
                 <span class="badge bg-primary mb-2">{{ lugar.categoria.nombre }}</span>
                 <h1 class="card-title fw-bold">{{ lugar.nombre }}</h1>
                 <hr>

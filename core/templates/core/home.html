@@ -1,12 +1,16 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+<!-- Crea una caja o contenedor principal de bienvenida con un relleno amplio, fondo blanco, bordes redondeados, -->
 <div class="p-5 mb-4 bg-white rounded-3 shadow-sm text-center">
+    <!-- contenedor interno fluido que añade un espaciado vertical -->
     <div class="container-fluid py-3">
         <h1 class="display-5 fw-bold text-primary">Fundación Patrimonio Vivo</h1>
+        <!-- párrafo descriptivo, centrado automáticamente, con un tamaño de fuente mayor y color gris tenue.-->
         <p class="col-md-10 fs-4 mx-auto text-muted">
             Dedicados a identificar, documentar y difundir lugares de interés patrimonial en Chile.
         </p>
+        <!-- utiliza el enrutamiento dinámico de Django para invitar al usuario a revisar el listado de espacios patrimoniales. -->
         <a href="{% url 'catalogo' %}" class="btn btn-primary btn-lg mt-3">Explorar Catálogo</a>
     </div>
 </div>

@@ -20,9 +20,13 @@ from core.views import home_view, catalogo_view, detalle_lugar_view
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    #Habilita la ruta para acceder al panel de administración
     path('admin/', admin.site.urls),
+    #Define la ruta principal o raíz del sitio web
     path('', home_view, name='home'),
+    #Crea la ruta para mostrar el listado de espacios patrimoniales y sus filtros
     path('catalogo/', catalogo_view, name='catalogo'),
+    #Crea una ruta dinámica que recibe un número entero para mostrar la página de detalles de un lugar específico
     path('lugar/<int:lugar_id>/', detalle_lugar_view, name='detalle_lugar'),
     # Rutas de Autenticación 
     path('login/', auth_views.LoginView.as_view(template_name='core/login.html'), name='login'),

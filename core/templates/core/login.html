@@ -1,15 +1,22 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+<!-- Centra horizontalmente todo el formulario en la pantalla mediante un contenedor de fila. -->
 <div class="row justify-content-center">
+    <!-- Limita el ancho del formulario a 5 columnas -->
     <div class="col-md-5">
+        <!-- Crea una tarjeta con sombra ligera y un margen superior para separarla de la barra de navegación -->
         <div class="card shadow-sm mt-4">
             <div class="card-header bg-dark text-white text-center fw-bold">
                 Iniciar Sesión - Fundación Patrimonio Vivo
             </div>
+            <!-- Genera el cuerpo interior de la tarjeta con un espacio de relleno amplio -->
             <div class="card-body p-4">
+                <!-- Define un formulario HTML que envía los datos de usuario y contraseña mediante el método HTTP POST -->
                 <form method="post">
+                    <!-- Una etiqueta vital de seguridad en Django! Genera un token secreto de protección contra ataques CSRF-->
                     {% csrf_token %}
+                    <!-- Renderiza automáticamente los campos del formulario de inicio de sesión -->
                     {{ form.as_p }}
                     <button type="submit" class="btn btn-primary w-100 mt-3">Ingresar</button>
                 </form>
